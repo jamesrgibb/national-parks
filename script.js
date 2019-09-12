@@ -34,11 +34,11 @@ function formatQueryParams(params){
 function renderParks(responseJson){
   console.log(responseJson)
   $('#results-list').empty();
-  for(let i = 0; i< responseJson.items.length; i++){
+  for(let i = 0; i< responseJson.data.length; i++){
       $('#results-list').append(
-          `<li><h3>${responseJson.data[i].states.name}</h3>
-    <p>${responseJson.data[i].states.description}</p>
-    <a href='${responseJson.data[i].states.default.url}'>
+          `<li><h3>${responseJson.data[i].fullName}</h3>
+    <p>${responseJson.data[i].description}</p>
+    <a href='${responseJson.data[i].url}'>Website</a>
     </li>`
   )};
   return $('#results').removeClass('hidden');
